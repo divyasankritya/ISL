@@ -9,6 +9,7 @@ A deep learning system for real-time sign language recognition using a CNN-LSTM 
 - CNN-LSTM with temporal attention
 - Data augmentation and test-time augmentation
 - Webcam integration for live inference
+- Recording capabilities for gesture analysis
 
 ## Project Structure
 
@@ -35,8 +36,8 @@ README.md                # This file
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/divyasankritya/ISL.git
-   cd ISL
+   git clone https://github.com/divyasankritya/Multimodal-Sign-Language-and-Emotion-Recognition-System.git
+   cd Multimodal-Sign-Language-and-Emotion-Recognition-System
    ```
 
 2. **Create a virtual environment**
@@ -47,7 +48,7 @@ README.md                # This file
 
 3. **Install dependencies**
    ```bash
-   pip install -r requirements.txt
+   pip3 install -r requirements.txt
    ```
 
 4. **Prepare your dataset**
@@ -58,28 +59,33 @@ README.md                # This file
 
 **Full pipeline (preprocessing, training, evaluation):**
 ```bash
-python run_pipeline.py
+python3 run_pipeline.py
 ```
 
 **Skip steps if needed:**
 ```bash
-python run_pipeline.py --skip-preprocessing
-python run_pipeline.py --skip-preprocessing --skip-training
+python3 run_pipeline.py --skip-preprocessing
+python3 run_pipeline.py --skip-preprocessing --skip-training
 ```
 
-**Webcam inference:**
+**Webcam inference (Sign Language Recognition):**
 ```bash
-python src/utils/webcam_inference.py --model models/finetuned/final_model.h5
+python3 src/utils/webcam_inference.py --model models/finetuned/final_model.h5
 ```
 
 **Emotion detection:**
 ```bash
-python src/utils/emotion_demo.py --webcam
+python3 src/utils/emotion_demo.py --webcam
+```
+
+**Integrated recognition (Sign Language + Emotion):**
+```bash
+python3 src/utils/integrated_recognition.py --sl-model models/finetuned/final_model.h5 --emotion-model models/emotion_models.h5
 ```
 
 **Test webcam:**
 ```bash
-python src/utils/test_webcam.py
+python3 src/utils/test_webcam.py
 ```
 
 ## Configuration
@@ -90,7 +96,7 @@ Edit `src/config.py` to change:
 
 ## Troubleshooting
 
-- **Camera not working:** Run `python src/utils/test_webcam.py`
+- **Camera not working:** Run `python3 src/utils/test_webcam.py`
 - **CUDA/GPU issues:** Ensure correct TensorFlow version and CUDA drivers
 - **Memory issues:** Reduce `BATCH_SIZE` or `IMAGE_SIZE` in config
 - **Dataset issues:** Check `DATASET_ROOT` and folder structure
