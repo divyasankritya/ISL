@@ -1,10 +1,10 @@
-# Sign Language Recognition System
+# Multimodal Sign Language and Emotion Recognition System
 
 A deep learning system for real-time sign language recognition using a CNN-LSTM architecture with temporal attention. Includes optional emotion detection.
 
 ## Features
 
-- Real-time sign language recognition (15 sentences)
+- Real-time sign language recognition (sentences)
 - Optional facial emotion detection
 - CNN-LSTM with temporal attention
 - Data augmentation and test-time augmentation
